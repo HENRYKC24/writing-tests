@@ -5,6 +5,26 @@ exports["setUp"] = function(callback) {
 	callback();
 };
 
+exports["All grades are A's allthrough"] = function(test) {
+	book.addGrade(100);
+	book.addGrade(90);
+
+	var result = book.checkIfAllGradesAreAs();
+
+	test.equal(result, 'A');
+	test.done();
+};
+
+exports["Average score is an A"] = function(test) {
+	book.addGrade(100);
+	book.addGrade(90);
+
+	var result = book.getLetterGrade();
+
+	test.equal(result, 'A');
+	test.done();
+};
+
 exports["can add new grade"] = function(test) {
 	// book._grades = [];
 	book.addGrade(90);
